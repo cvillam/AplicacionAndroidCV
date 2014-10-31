@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="margen_arriba_actInicio">35dp</dimen>
+    <dimen name="margen_text_field_inicio">18dp</dimen>
+    <dimen name="margen_izq_botones_inicio">75dp</dimen>
+    <dimen name="width_botones_inicio">150dp</dimen>
+    
+
+</resources>

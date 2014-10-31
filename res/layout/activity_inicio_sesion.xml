@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.aplicacionandroidcv.InicioSesion" >
+
+    <TextView
+        android:id="@+id/mensaje_bienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mensajeinisesion" 
+        android:gravity="center"
+        
+        />
+    <TextView
+        android:id="@+id/mensaje_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iniciousuario" 
+        android:layout_below="@id/mensaje_bienvenida"
+        android:layout_marginTop="@dimen/margen_arriba_actInicio"
+        />
+    <EditText 
+        android:id="@+id/edit_iniUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_inicio_usuario"
+        android:layout_toRightOf="@id/mensaje_usuario"
+        android:layout_below="@id/mensaje_bienvenida"
+        android:layout_marginTop="@dimen/margen_text_field_inicio"
+        />
+    <TextView
+        android:id="@+id/mensaje_contrasena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iniciocontrasena" 
+        android:layout_below="@id/mensaje_usuario"
+        android:layout_marginTop="@dimen/margen_arriba_actInicio"
+      
+        />
+     <EditText 
+        android:id="@+id/edit_iniContrasena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_inicio_contrasena"
+        android:layout_toRightOf="@id/mensaje_contrasena"
+        android:layout_below="@id/mensaje_usuario"
+        android:layout_marginTop="@dimen/margen_text_field_inicio"
+        />
+     <Button 
+        android:id="@+id/btn_inicio_sesion"
+        android:layout_width="@dimen/width_botones_inicio"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_arriba_actInicio"
+        android:layout_below="@id/mensaje_contrasena"
+        android:text="@string/button_inicio_sesion" 
+        android:layout_marginLeft="@dimen/margen_izq_botones_inicio"
+        android:background="@color/azul"
+        android:textColor="@color/blanco"
+         />
+     <Button 
+        android:id="@+id/btn_registro"
+        android:layout_width="@dimen/width_botones_inicio"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_arriba_actInicio"
+        android:layout_below="@id/btn_inicio_sesion"
+        android:text="@string/button_registro" 
+        android:layout_marginLeft="@dimen/margen_izq_botones_inicio"
+        android:background="@color/verde"
+        android:textColor="@color/blanco"
+         />
+    
+
+</RelativeLayout>
