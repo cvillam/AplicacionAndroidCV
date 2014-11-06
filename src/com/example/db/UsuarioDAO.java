@@ -66,16 +66,16 @@ public Usuario getUsuarioByNombre(String nombre){
 		}
 					
 	}
-	public void updateUsuario(Usuario user){
-		
-		String[] args = new String[1];
-		args[0] = user.getNombre();
-		ContentValues cV = new ContentValues();
-		cV.put(Usuario.COLUMN_NOMBRE, user.getNombre());
-		cV.put(Usuario.COLUMN_USERNAME, user.getUsername());
-		cV.put(Usuario.COLUMN_PASSWORD, user.getPassword());
-		db.update(Usuario.TABLE_NAME, cV, "nombre = ? ", args);
-	}
+//	public void updateUsuario(Usuario user){
+//		
+//		String[] args = new String[1];
+//		args[0] = user.getNombre();
+//		ContentValues cV = new ContentValues();
+//		cV.put(Usuario.COLUMN_NOMBRE, user.getNombre());
+//		cV.put(Usuario.COLUMN_USERNAME, user.getUsername());
+//		cV.put(Usuario.COLUMN_PASSWORD, user.getPassword());
+//		db.update(Usuario.TABLE_NAME, cV, "nombre = ? ", args);
+//	}
 //public void updateUsuario(Usuario user){
 //		
 ////		String[] args = new String[1];
@@ -87,5 +87,9 @@ public Usuario getUsuarioByNombre(String nombre){
 //		db.update(Usuario.TABLE_NAME, cV, "_id="+user.getId(), null);
 //	}
 
+public void updateUsuario(String nombre, String username,String password, String name, String user1){
 		
+	db.execSQL("UPDATE usuario SET nombre='"+nombre+"',username='"+username
+			+"',password='"+password+"' WHERE (nombre='"+name+"' AND username='"+user1+"')");
+	}
 }

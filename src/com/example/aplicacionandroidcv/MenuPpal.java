@@ -17,7 +17,7 @@ public class MenuPpal extends ActionBarActivity {
 
 	TextView txt, login;
 	Button newnotatxt, newnotav, vnotas, edit;
-	String name;
+	String name, loginu;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
@@ -35,6 +35,7 @@ public class MenuPpal extends ActionBarActivity {
 		Bundle bundle = getIntent().getExtras();
 		if(bundle != null) {
 			name = bundle.getString("login");
+			loginu = bundle.getString("loginu");
 			login.setText("Logueado como: "+name);
 						
 		}
@@ -56,6 +57,7 @@ public class MenuPpal extends ActionBarActivity {
 	public void abrirEdicion(View v){
 		Intent edicion = new Intent(MenuPpal.this, EdicionCuenta.class);
 		edicion.putExtra("login", name);
+		edicion.putExtra("loginu", loginu);
        startActivity(edicion);
 	}
 }

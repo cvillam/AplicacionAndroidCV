@@ -16,7 +16,7 @@ public class EdicionCuenta extends ActionBarActivity implements OnClickListener{
 	
 	EditText edname, edusername, edpass1, edpass2;
 	Button btnEdit;
-	String name;
+	String name, loginu;
 	UsuarioDAO dao;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,9 @@ public class EdicionCuenta extends ActionBarActivity implements OnClickListener{
 		 Bundle bundle = getIntent().getExtras();
 			if(bundle != null) {
 				name = bundle.getString("login");
-				Usuario u =	dao.getUsuarioByNombre(name);
+				loginu = bundle.getString("loginu");
+				//Usuario u =	dao.getUsuarioByNombre(name);
+				Usuario u =	dao.getUsuario(loginu);
 				edname.setText(u.getNombre());
 				edusername.setText(u.getUsername());
 				edpass1.setText(u.getPassword());
@@ -52,12 +54,14 @@ public class EdicionCuenta extends ActionBarActivity implements OnClickListener{
 		String n, user, p1, p2;
 		p1 = edpass1.getText().toString();
 		p2 = edpass2.getText().toString();
+		String n1=edname.getText().toString();
+		String u1 = edusername.getText().toString();
 		if(p1.equals(p2)){
 			Usuario usuario = new Usuario();
 			usuario.setNombre(edname.getText().toString());
 			usuario.setUsername(edusername.getText().toString());
 			usuario.setPassword(edpass1.getText().toString());
-			dao.updateUsuario(usuario);
+			dao.updateUsuario(n1,u1,p1,name,loginu);
 			Toast.makeText(this, "Usuario editado!", Toast.LENGTH_LONG).show();
 			Intent intent = new Intent(EdicionCuenta.this, MenuPpal.class);
 			intent.putExtra("login", usuario.getNombre());

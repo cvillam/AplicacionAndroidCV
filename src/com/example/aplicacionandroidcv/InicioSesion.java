@@ -56,6 +56,7 @@ public class InicioSesion extends ActionBarActivity implements OnClickListener {
 			Toast.makeText(this, "Correcto! Bienvenido "+nameu+"!", Toast.LENGTH_SHORT).show();
 			Intent mppal = new Intent(InicioSesion.this, MenuPpal.class);
 			mppal.putExtra("login", usuario.getNombre());
+			mppal.putExtra("loginu", usuario.getUsername());
             startActivity(mppal);
 		}
 		else{
