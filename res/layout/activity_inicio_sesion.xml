@@ -32,6 +32,7 @@
         android:layout_toRightOf="@id/mensaje_usuario"
         android:layout_below="@id/mensaje_bienvenida"
         android:layout_marginTop="@dimen/margen_text_field_inicio"
+        android:inputType="text"
         />
     <TextView
         android:id="@+id/mensaje_contrasena"
@@ -50,6 +51,7 @@
         android:layout_toRightOf="@id/mensaje_contrasena"
         android:layout_below="@id/mensaje_usuario"
         android:layout_marginTop="@dimen/margen_text_field_inicio"
+        android:inputType="textPassword"
         />
      <Button 
         android:id="@+id/btn_inicio_sesion"

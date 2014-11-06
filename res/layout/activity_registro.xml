@@ -4,5 +4,89 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-	<Te
+    <TextView
+        android:id="@+id/mensaje_registro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/msj_inicial_registro" 
+        android:layout_gravity="center"
+              
+        />
+    <TextView
+        android:id="@+id/msj_reg_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reg_nombre" 
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+        />
+    <EditText 
+        android:id="@+id/edit_regNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_registro_nombre"
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+        android:inputType="textCapWords"
+        />
+    <TextView
+        android:id="@+id/msj_reg_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reg_user" 
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+      
+        />
+     <EditText 
+        android:id="@+id/edit_regUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_registro_user"
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+        android:inputType="text"
+        />
+     <TextView
+        android:id="@+id/msj_reg_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reg_pass" 
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+      
+        />
+     <EditText 
+        android:id="@+id/edit_regPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_registro_pass"
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+        android:inputType="textPassword"
+        />
+      <TextView
+        android:id="@+id/msj_reg_password2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reg_pass_2" 
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+      
+        />
+     <EditText 
+        android:id="@+id/edit_regPass2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_registro_pass2"
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+        android:inputType="textPassword"
+        />
+     
+     
+     
+     <Button 
+        android:id="@+id/btn_reg_registro"
+        android:layout_width="@dimen/width_botones_inicio"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+        android:text="@string/button_reg_registro" 
+        android:layout_marginLeft="@dimen/margen_izq_botones_inicio"
+        android:background="@color/azul"
+        android:textColor="@color/blanco"
+         />
+	
 </LinearLayout>

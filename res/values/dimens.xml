@@ -7,6 +7,8 @@
     <dimen name="margen_text_field_inicio">18dp</dimen>
     <dimen name="margen_izq_botones_inicio">75dp</dimen>
     <dimen name="width_botones_inicio">150dp</dimen>
-    
-
+    <dimen name="margen_text_field_registro">10dp</dimen>
+	<dimen name="tamano_texto_mppal">24sp</dimen>
+	<dimen name="height_btn">50dp</dimen>
+	<dimen name="width_btn">180dp</dimen>
 </resources>

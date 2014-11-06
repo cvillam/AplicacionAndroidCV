@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AplicacionAndroidCV</string>
+    <string name="app_name">Notapp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="mensajeinisesion">Bienvenido! Inicie sesión o registrese para continuar</string>
  	<string name="iniciousuario">Usuario:</string>
  	<string name="iniciocontrasena">Contraseña:</string>
  	<string name="hint_inicio_usuario">Ingrese su nick</string>
- 	<string name="hint_inicio_contrasena">Digite la contraseña</string>
+ 	<string name="hint_inicio_contrasena">Contraseña</string>
  	<string name="button_inicio_sesion"> Iniciar sesión </string>
  	<string name="button_registro">Registrarse</string>
+ 	<string name="msj_inicial_registro">Ingrese los datos para el registro</string>
+ 	<string name="reg_nombre">Nombre:</string>
+ 	<string name="reg_user">Username:</string>
+ 	<string name="reg_pass">Contraseña:</string>
+ 	<string name="reg_pass_2">Por favor repita la contraseña:</string>
+ 	<string name="hint_registro_nombre">Ingrese su nombre</string>
+ 	<string name="hint_registro_user">Nombre de usuario</string>
+ 	<string name="hint_registro_pass">Digite la contraseña</string>
+ 	<string name="hint_registro_pass2">Verifique la contraseña</string>
+ 	<string name="button_reg_registro">Registrar datos</string>
+ 	<string name="txtv_mppal_bienv">Menú principal</string>
+ 	<string name="btn_mppal_menu1">Ingresar nota de texto</string>
+ 	<string name="btn_mppal_menu2">Ingresar nota de voz</string>
+ 	<string name="btn_mppal_menu3">Ver mis notas</string>
+ 	<string name="btn_mppal_menu4">Editar mi cuenta</string>
+ 	<string name="btn_edicion_editar">Editar datos</string>
 </resources>

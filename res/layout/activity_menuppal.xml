@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    >
+    
+	<TextView 
+	    android:id="@+id/msj_mppal_bienvenida"
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:textColor="@color/verde"
+	    android:textSize="@dimen/tamano_texto_mppal"
+	    android:text="@string/txtv_mppal_bienv"
+	    android:layout_gravity="center"
+	     android:layout_marginTop="@dimen/margen_text_field_registro"
+	    />
+	<TextView 
+	    android:id="@+id/mppal_logueado"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:layout_marginTop="@dimen/margen_text_field_registro"
+	    />
+	<Button 
+	    android:id="@+id/btn_ing_nota_txt"
+	    android:layout_height="@dimen/height_btn"
+	    android:layout_width="@dimen/width_btn"
+	    android:background="@color/naranja"
+	    android:textColor="@color/blanco"
+	    android:layout_gravity="center"
+	    android:text="@string/btn_mppal_menu1"
+	    android:layout_marginTop="@dimen/margen_text_field_registro"
+	    
+	    />
+	<Button 
+	    android:id="@+id/btn_ing_nota_voz"
+	    android:layout_height="@dimen/height_btn"
+	    android:layout_width="@dimen/width_btn"
+	    android:background="@color/rojo"
+	    android:textColor="@color/blanco"
+	    android:layout_gravity="center"
+	    android:text="@string/btn_mppal_menu2"
+	    android:layout_marginTop="@dimen/margen_text_field_registro"
+	    
+	    />
+	<Button 
+	    android:id="@+id/btn_ver_notas"
+	    android:layout_height="@dimen/height_btn"
+	    android:layout_width="@dimen/width_btn"
+	    android:background="@color/violeta"
+	    android:textColor="@color/blanco"
+	    android:layout_gravity="center"
+	    android:text="@string/btn_mppal_menu3"
+	    android:layout_marginTop="@dimen/margen_text_field_registro"
+	    
+	    />
+	<Button 
+	    android:id="@+id/btn_editar_cuenta"
+	    android:layout_height="@dimen/height_btn"
+	    android:layout_width="@dimen/width_btn"
+	    android:background="@color/azul"
+	    android:textColor="@color/blanco"
+	    android:layout_gravity="center"
+	    android:text="@string/btn_mppal_menu4"
+	    android:layout_marginTop="@dimen/margen_text_field_registro"
+	    
+	    />
+	<TextView 
+	    android:id="@+id/fecha"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    />
+	
+</LinearLayout>

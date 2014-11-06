@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	 <TextView
+       
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reg_nombre" 
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+        />
+	<EditText 
+	    android:id="@+id/edit_cuenta_name"
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:inputType="textCapWords"
+	    
+	    
+	    />
+	<TextView
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reg_user" 
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+      
+        />
+	<EditText 
+	    android:id="@+id/edit_cuenta_username"
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:inputType="text"
+	    
+	    
+	    />
+	<TextView
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reg_pass" 
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+      
+        />
+	<EditText 
+	    android:id="@+id/edit_cuenta_password"
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:inputType="textPassword"
+	   
+	    
+	    />
+	
+	<TextView
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reg_pass_2" 
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+      
+        />
+	<EditText 
+	    android:id="@+id/edit_cuenta_password2"
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:inputType="textPassword"
+	   
+	    
+	    />
+	 
+    <Button 
+	    android:id="@+id/btn_edicion_edicion"
+	    android:layout_height="@dimen/height_btn"
+	    android:layout_width="@dimen/width_btn"
+	    android:background="@color/azul"
+	    android:textColor="@color/blanco"
+	    android:layout_gravity="center"
+	    android:text="@string/btn_edicion_editar"
+	    android:layout_marginTop="@dimen/margen_text_field_registro"
+	    
+	    />
+</LinearLayout>
