@@ -88,6 +88,18 @@
 	    android:layout_height="wrap_content"
 	    
 	    />
-	
+	<Button 
+	    android:id="@+id/btn_vermapa"
+	    android:layout_width="@dimen/width_botones_inicio"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:text="@string/btn_mapa"
+	    android:background="@color/verde"
+	    android:textColor="@color/blanco"
+	    />
+	<WebView
+        android:id="@+id/webvmap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
     
 </LinearLayout>

@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DataBaseHelper extends SQLiteOpenHelper{
 
 	public static final String DB_NAME = "AppCVDatabase";
-	public static final int DB_VERSION = 1;
+	public static final int DB_VERSION = 2;
 	
 	public DataBaseHelper(Context context) {
 		
@@ -44,8 +44,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 				+Nota.COLUMN_CONTENIDO+" VARCHAR,"
 				+Nota.COLUMN_ARCHIVOSOUND+" VARCHAR,"
 				+Nota.COLUMN_HORAFECHA+" VARCHAR,"
-				+Nota.COLUMN_LATITUD+" INTEGER,"
-				+Nota.COLUMN_LONGITUD+" INTEGER,"
+				+Nota.COLUMN_LATITUD+" FLOAT,"
+				+Nota.COLUMN_LONGITUD+" FLOAT,"
 				+Nota.COLUMN_CREADOR+" VARCHAR"
 				+")";
 		db.execSQL(sql2);

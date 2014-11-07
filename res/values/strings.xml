@@ -40,5 +40,6 @@
  	<string name="txt_detnt_Latitud">Latitud </string>
  	<string name="txt_detnt_Longitud">Longitud </string>
  	<string name="txt_detnt_inicio">Detalles de la nota seleccionada </string>
+ 	<string name="btn_mapa">Ver ubicación en mapa </string>
  	
 </resources>

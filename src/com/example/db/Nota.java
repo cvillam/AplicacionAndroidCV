@@ -17,7 +17,7 @@ public class Nota {
 		
 	int id;
 	String nombre, tag, tipo, contenido, archivosound, horafecha;
-	int latitud, longitud;
+	float latitud, longitud;
 	String creador;
 	
 	
@@ -63,17 +63,18 @@ public class Nota {
 	public void setHorafecha(String horafecha) {
 		this.horafecha = horafecha;
 	}
-		
-	public int getLatitud() {
+	
+	
+	public float getLatitud() {
 		return latitud;
 	}
-	public void setLatitud(int latitud) {
+	public void setLatitud(float latitud) {
 		this.latitud = latitud;
 	}
-	public int getLongitud() {
+	public float getLongitud() {
 		return longitud;
 	}
-	public void setLongitud(int longitud) {
+	public void setLongitud(float longitud) {
 		this.longitud = longitud;
 	}
 	public String getTag() {
@@ -84,9 +85,10 @@ public class Nota {
 	}
 	
 	
+	
 	public Nota(String nombre, String tag, String tipo, String contenido,
-			String archivosound, String horafecha, int latitud, int longitud,
-			String creador) {
+			String archivosound, String horafecha, float latitud,
+			float longitud, String creador) {
 		
 		this.nombre = nombre;
 		this.tag = tag;

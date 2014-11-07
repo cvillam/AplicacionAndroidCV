@@ -53,7 +53,7 @@ public class IngNotaTexto extends ActionBarActivity implements OnClickListener{
 
 		@Override
 		public void onClick(View v) {
-			int lat, lng;
+			float lat, lng;
 			Nota nota = new Nota();
 			nota.setNombre(nombre.getText().toString());
 			nota.setTag(tag.getText().toString());
@@ -64,8 +64,8 @@ public class IngNotaTexto extends ActionBarActivity implements OnClickListener{
 		    Location location = locationManager.getLastKnownLocation(provider);
 	    
 		    if (location != null) {
-		    	lat = (int) (location.getLatitude());
-			    lng = (int) (location.getLongitude());
+		    	lat = (float) (location.getLatitude());
+			    lng = (float) (location.getLongitude());
 			    nota.setLatitud(lat);
 			    nota.setLongitud(lng);
 		      

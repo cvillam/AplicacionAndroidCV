@@ -55,8 +55,8 @@ public class NotaDAO {
 				nota.setNombre(cursor.getString(1));
 				nota.setTag(cursor.getString(2));
 				nota.setContenido(cursor.getString(4));
-				nota.setLatitud(cursor.getInt(7));
-				nota.setLongitud(cursor.getInt(8));
+				nota.setLatitud(cursor.getFloat(7));
+				nota.setLongitud(cursor.getFloat(8));
 				nota.setHorafecha(cursor.getString(6));
 				nota.setCreador(cursor.getString(9));
 				
@@ -80,8 +80,8 @@ public class NotaDAO {
 				nota.setNombre(cursor.getString(1));
 				nota.setTag(cursor.getString(2));
 				nota.setArchivosound(cursor.getString(5));
-				nota.setLatitud(cursor.getInt(6));
-				nota.setLongitud(cursor.getInt(7));
+				nota.setLatitud(cursor.getFloat(6));
+				nota.setLongitud(cursor.getFloat(7));
 				nota.setHorafecha(cursor.getString(8));
 				nota.setCreador(cursor.getString(9));
 				
@@ -107,8 +107,8 @@ public class NotaDAO {
 				nota.setTipo(cursor.getString(3));
 				nota.setContenido(cursor.getString(4));
 				nota.setArchivosound(cursor.getString(5));
-				nota.setLatitud(cursor.getInt(6));
-				nota.setLongitud(cursor.getInt(7));
+				nota.setLatitud(cursor.getFloat(6));
+				nota.setLongitud(cursor.getFloat(7));
 				nota.setHorafecha(cursor.getString(8));
 				nota.setCreador(cursor.getString(9));
 				
