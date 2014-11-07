@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
+    <TextView 
+        android:id="@+id/txt_vernotas_mensaje"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/txt_vernotas_tagspin"
+        />
+    <Spinner
+        android:id="@+id/spinner_vernotas_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/valores_spinner_tag"
+        android:prompt="@string/prompt_spinner_tag" 
+        android:layout_below="@id/txt_vernotas_mensaje"
+        />
+    
+     
+        
     <ListView
     	android:id="@+id/listnotas"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_below="@id/spinner_vernotas_tag"
         />
-        
 
-</LinearLayout>
+</RelativeLayout>

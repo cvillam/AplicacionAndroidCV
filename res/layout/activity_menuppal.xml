@@ -37,7 +37,7 @@
 	    android:id="@+id/btn_ing_nota_voz"
 	    android:layout_height="@dimen/height_btn"
 	    android:layout_width="@dimen/width_btn"
-	    android:background="@color/rojo"
+	    android:background="@color/verde"
 	    android:textColor="@color/blanco"
 	    android:layout_gravity="center"
 	    android:text="@string/btn_mppal_menu2"
@@ -63,6 +63,17 @@
 	    android:textColor="@color/blanco"
 	    android:layout_gravity="center"
 	    android:text="@string/btn_mppal_menu4"
+	    android:layout_marginTop="@dimen/margen_text_field_registro"
+	    
+	    />
+	<Button 
+	    android:id="@+id/btn_close"
+	    android:layout_height="@dimen/height_btn"
+	    android:layout_width="@dimen/width_btn"
+	    android:background="@color/rojo"
+	    android:textColor="@color/blanco"
+	    android:layout_gravity="center"
+	    android:text="@string/btn_cerrarsesion"
 	    android:layout_marginTop="@dimen/margen_text_field_registro"
 	    
 	    />

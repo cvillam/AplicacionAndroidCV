@@ -41,5 +41,30 @@
  	<string name="txt_detnt_Longitud">Longitud </string>
  	<string name="txt_detnt_inicio">Detalles de la nota seleccionada </string>
  	<string name="btn_mapa">Ver ubicación en mapa </string>
- 	
+ 	<string-array name="valores_spinner_tag">
+ 	    <item>Todas las notas</item>
+ 	    <item>Familia</item>
+ 	    <item>Amigos</item>
+ 	    <item>Educación</item>
+ 	    <item>Viajes</item>
+ 	    <item>Salud</item>
+ 	    <item>Reuniones</item>
+ 	    <item>Deportes</item>
+ 	    <item>Varios</item>
+ 	</string-array>
+ 	<string name="prompt_spinner_tag">Seleccione tag</string>
+ 	<string name="txt_vernotas_tagspin">Seleccione un tag para simplificar la lista</string>
+ 	<string name="btn_vernotas_buscar">Buscar por tag</string>
+ 	<string name="btn_borrarnota">Eliminar esta nota</string>
+ 	<string-array name="valores_spinner_ingn">
+ 	    <item>Familia</item>
+ 	    <item>Amigos</item>
+ 	    <item>Educación</item>
+ 	    <item>Viajes</item>
+ 	    <item>Salud</item>
+ 	    <item>Reuniones</item>
+ 	    <item>Deportes</item>
+ 	    <item>Varios</item>
+ 	</string-array>
+ 	<string name="btn_cerrarsesion">Cerrar sesión</string>
 </resources>

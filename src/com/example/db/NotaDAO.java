@@ -140,5 +140,40 @@ public class NotaDAO {
 		}
 					
 	}
+	public List<Nota> getAllNotasByCreadoryTag(String creador, String tag){
+		List<Nota> data = new ArrayList<Nota>();
+		Cursor cursor = db.rawQuery("SELECT * FROM "+Nota.TABLE_NAME+" WHERE (creador = '"+creador
+				+"' AND tag ='"+tag+"')", null);
+		if(cursor.getCount()>0){
+			for(int i = 0; i<cursor.getCount();i++){
+				cursor.moveToPosition(i);
+				Nota nota = new Nota();
+				nota.setId(cursor.getInt(0));
+				nota.setNombre(cursor.getString(1));
+				nota.setTag(cursor.getString(2));
+				nota.setTipo(cursor.getString(3));
+				nota.setContenido(cursor.getString(4));
+				nota.setArchivosound(cursor.getString(5));
+				nota.setLatitud(cursor.getFloat(6));
+				nota.setLongitud(cursor.getFloat(7));
+				nota.setHorafecha(cursor.getString(8));
+				nota.setCreador(cursor.getString(9));
+				
+				data.add(nota);
+				}
+			}
+		
+			return data;	
+	}
+	public void deleteNota(Nota nota){
+		
+		String[] args = new String[2];
+		args[0] = ""+nota.getNombre();
+		args[1]=""+nota.getCreador();
+		//args[1] = "Tierra";
+		//db.delete(Planeta.TABLE_NAME, "_id=? AND nombre like '?'", )
+		//db.delete(Planeta.TABLE_NAME, "_id=1, null) cuANDO SE COLOCAN LOS PARAMETROS EN LA SENTENCIA
+		db.delete(Nota.TABLE_NAME, "nombre = ? AND creador = ?", args);
+	}
 	
 }

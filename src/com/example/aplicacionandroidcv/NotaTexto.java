@@ -3,6 +3,8 @@ package com.example.aplicacionandroidcv;
 import com.example.db.Nota;
 import com.example.db.NotaDAO;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -11,13 +13,14 @@ import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class NotaTexto extends ActionBarActivity implements OnClickListener{
 	
 	String name, loginu, nombrenota, latitudenviar, longitudenviar;
 	TextView nombre, tag, contenido, horayfecha, lat, longitud;
 	NotaDAO dao;
-	Button vermap;
+	Button vermap, eliminarbtn;
 	WebView webmapa;
 	
 	@Override
@@ -33,6 +36,7 @@ public class NotaTexto extends ActionBarActivity implements OnClickListener{
 		lat = (TextView) findViewById(R.id.txt_detnt_latitud);
 		longitud = (TextView) findViewById(R.id.txt_detnt_longitud);
 		vermap = (Button) findViewById(R.id.btn_vermapa);
+		eliminarbtn = (Button) findViewById(R.id.btn_eliminarnota);
 		webmapa = (WebView) findViewById(R.id.webvmap);
 			
 		
@@ -59,13 +63,52 @@ public class NotaTexto extends ActionBarActivity implements OnClickListener{
 		longitud.setText(lng);
 		
 		vermap.setOnClickListener(this);
+		eliminarbtn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				eliminarNota();
+			}
+		});
 	}
 
 	@Override
 	public void onClick(View v) {
+		
 		String urlmap = "https://www.google.es/maps/@"+latitudenviar+","+
 				longitudenviar+",18z";
 				   webmapa.loadUrl(urlmap);
+		
+	}
+	public void eliminarNota(){
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("¿Desea eliminar la nota?")
+		        .setTitle("Advertencia")
+		        .setCancelable(false)
+		        .setNegativeButton("Cancelar",
+		                new DialogInterface.OnClickListener() {
+		                    public void onClick(DialogInterface dialog, int id) {
+		                        dialog.cancel();
+		                    }
+		                })
+		        .setPositiveButton("Aceptar",
+		                new DialogInterface.OnClickListener() {
+		                    public void onClick(DialogInterface dialog, int id) {
+		                    	Nota notaborrar = new Nota();
+		                		notaborrar.setNombre(nombrenota);
+		                		notaborrar.setCreador(loginu);
+		                		dao.deleteNota(notaborrar);
+		                		
+		                		Intent nnt = new Intent(NotaTexto.this, VerNotas.class);
+		                		nnt.putExtra("login", name);
+		                		nnt.putExtra("loginu", loginu);
+		                       startActivity(nnt);
+		                    }
+		                });
+		AlertDialog alert = builder.create();
+		alert.show();
+		
 		
 	}
 }

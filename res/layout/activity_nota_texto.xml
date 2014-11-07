@@ -19,24 +19,31 @@
     <EditText 
         android:id="@+id/edit_ingnt_nombre"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_marginTop="@dimen/margen_text_field_registro"
         android:inputType="textCapWords"
         />
+  
 	<TextView 
         android:text="@string/txt_ingnt_Tag"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_marginTop="@dimen/margen_text_field_registro"
         />
-	<EditText 
-        android:id="@+id/edit_ingnt_tag"
+<!-- 	<EditText  -->
+<!--         android:id="@+id/edit_ingnt_tag" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_marginTop="@dimen/margen_text_field_registro" -->
+<!--         android:inputType="text" -->
+<!--         /> -->
+	 <Spinner
+        android:id="@+id/spinner_ingnt_tag"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="@dimen/margen_text_field_registro"
-        android:inputType="text"
-        />
-	<TextView 
+        android:entries="@array/valores_spinner_ingn"
+        android:prompt="@string/prompt_spinner_tag" />
+	   <TextView 
         android:text="@string/txt_ingnt_Contenido"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
@@ -45,10 +52,11 @@
 	<EditText 
         android:id="@+id/edit_ingnt_contenido"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_marginTop="@dimen/margen_text_field_registro"
         android:inputType="textMultiLine"
         />
+	
 	<Button 
         android:id="@+id/btn_ingnt_crearnotatexto"
         android:layout_width="@dimen/width_botones_inicio"

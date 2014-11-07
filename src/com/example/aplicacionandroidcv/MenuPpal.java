@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class MenuPpal extends ActionBarActivity {
 
 	TextView txt, login;
-	Button newnotatxt, newnotav, vnotas, edit;
+	Button newnotatxt, newnotav, vnotas, edit, close;
 	String name, loginu;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class MenuPpal extends ActionBarActivity {
 		newnotav = (Button) findViewById(R.id.btn_ing_nota_voz);
 		vnotas = (Button) findViewById(R.id.btn_ver_notas);
 		edit = (Button) findViewById(R.id.btn_editar_cuenta);
+		close = (Button) findViewById(R.id.btn_close);
 	
 		String horafecha = DateFormat.getDateTimeInstance().format(new Date());
 		txt.setText(horafecha);
@@ -67,6 +68,17 @@ public class MenuPpal extends ActionBarActivity {
 				
 			}
 		});
+		close.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				Intent edicion = new Intent(MenuPpal.this, InicioSesion.class);
+				startActivity(edicion);
+				
+				
+			}
+		});
 		
 	}
 	public void abrirEdicion(View v){
@@ -86,5 +98,8 @@ public class MenuPpal extends ActionBarActivity {
 		nnt.putExtra("login", name);
 		nnt.putExtra("loginu", loginu);
        startActivity(nnt);
+	}
+	@Override
+	public void onBackPressed() {
 	}
 }

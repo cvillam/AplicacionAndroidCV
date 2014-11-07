@@ -30,6 +30,8 @@ public class InicioSesion extends ActionBarActivity implements OnClickListener {
         boton_inicio_sesion = (Button) findViewById(R.id.btn_inicio_sesion);
         username = (EditText) findViewById(R.id.edit_iniUsuario);
         pass = (EditText) findViewById(R.id.edit_iniContrasena);
+        username.setText("");
+        pass.setText("");
         dao = new  UsuarioDAO(this);
         
         boton_registro.setOnClickListener(new OnClickListener() {
@@ -63,6 +65,9 @@ public class InicioSesion extends ActionBarActivity implements OnClickListener {
 			Toast.makeText(this, "Error en usuario o contraseña! Intenta nuevamente", Toast.LENGTH_LONG).show();
 		}
 		
+	}
+	@Override
+	public void onBackPressed() {
 	}
 
 
