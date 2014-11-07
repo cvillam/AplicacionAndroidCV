@@ -51,7 +51,22 @@ public class MenuPpal extends ActionBarActivity {
 				
 			}
 		});
-		
+		newnotatxt.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				abrirNuevaNotaTexto(v);
+				
+			}
+		});
+		vnotas.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				abrirVerNotas(v);
+				
+			}
+		});
 		
 	}
 	public void abrirEdicion(View v){
@@ -59,5 +74,17 @@ public class MenuPpal extends ActionBarActivity {
 		edicion.putExtra("login", name);
 		edicion.putExtra("loginu", loginu);
        startActivity(edicion);
+	}
+	public void abrirNuevaNotaTexto(View v){
+		Intent nnt = new Intent(MenuPpal.this, IngNotaTexto.class);
+		nnt.putExtra("login", name);
+		nnt.putExtra("loginu", loginu);
+       startActivity(nnt);
+	}
+	public void abrirVerNotas(View v){
+		Intent nnt = new Intent(MenuPpal.this, VerNotas.class);
+		nnt.putExtra("login", name);
+		nnt.putExtra("loginu", loginu);
+       startActivity(nnt);
 	}
 }

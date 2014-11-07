@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<TextView 
+	    android:text="@string/txt_detnt_inicio"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    />
+	<TextView 
+	    android:text="@string/txt_detnt_Nombre"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:id="@+id/txt_detnt_nombre"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:text="@string/txt_detnt_Tag"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:id="@+id/txt_detnt_tag"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:text="@string/txt_detnt_Contenido"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:id="@+id/txt_detnt_contenido"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:text="@string/txt_detnt_HoraFecha"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:id="@+id/txt_detnt_horafecha"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:text="@string/txt_detnt_Ubicacion"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:text="@string/txt_detnt_Latitud"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:id="@+id/txt_detnt_latitud"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:text="@string/txt_detnt_Longitud"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:id="@+id/txt_detnt_longitud"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	
+    
+</LinearLayout>

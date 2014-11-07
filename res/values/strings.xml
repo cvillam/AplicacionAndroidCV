@@ -27,4 +27,18 @@
  	<string name="btn_mppal_menu3">Ver mis notas</string>
  	<string name="btn_mppal_menu4">Editar mi cuenta</string>
  	<string name="btn_edicion_editar">Editar datos</string>
+ 	<string name="txt_ingresar_notatexto">Datos de la nota de texto</string>
+ 	<string name="txt_ingnt_Nombre">Nombre para la nota:</string>
+ 	<string name="txt_ingnt_Tag">Tag o etiqueta de búsqueda:</string>
+ 	<string name="txt_ingnt_Contenido">Texto de la nota</string>
+ 	<string name="btn_ingnt_CrarNota">Crear nota</string>
+ 	<string name="txt_detnt_Nombre">Nombre de la nota:</string>
+ 	<string name="txt_detnt_Tag">Tag para la búsqueda de la nota:</string>
+ 	<string name="txt_detnt_Contenido">Texto de la nota:</string>
+ 	<string name="txt_detnt_HoraFecha">Fecha y hora de elaboración de la nota:</string>
+ 	<string name="txt_detnt_Ubicacion">Ubicación donde fue realizada la nota:</string>
+ 	<string name="txt_detnt_Latitud">Latitud </string>
+ 	<string name="txt_detnt_Longitud">Longitud </string>
+ 	<string name="txt_detnt_inicio">Detalles de la nota seleccionada </string>
+ 	
 </resources>
