@@ -64,7 +64,7 @@ public class NotaTexto extends ActionBarActivity implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		String urlmap = "https://www.google.es/maps/@"+latitudenviar+","+
-				longitudenviar+",17z";
+				longitudenviar+",18z";
 				   webmapa.loadUrl(urlmap);
 		
 	}
