@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+     <TextView 
+        android:text="@string/txt_ingresar_notavoz"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+        />
+    <TextView 
+        android:text="@string/txt_ingnt_Nombre"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+        />
+    <EditText 
+        android:id="@+id/edit_ingnv_nombre"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+        android:inputType="textCapWords"
+        />
+  
+	<TextView 
+        android:text="@string/txt_ingnt_Tag"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+        />
+
+	 <Spinner
+        android:id="@+id/spinner_ingnv_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/valores_spinner_ingn"
+        android:prompt="@string/prompt_spinner_tag" />
+	   
+	
+	<Button 
+        android:id="@+id/btn_ingnv_startRecord"
+        android:layout_width="@dimen/width_botones_inicio"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+        android:text="@string/btn_startRecord" 
+        android:layout_marginLeft="@dimen/margen_izq_botones_inicio"
+        android:background="@color/verde"
+        android:textColor="@color/blanco"
+         />
+	<Button 
+        android:id="@+id/btn_ingnv_stopRecord"
+        android:layout_width="@dimen/width_botones_inicio"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+        android:text="@string/btn_stoprecord" 
+        android:layout_marginLeft="@dimen/margen_izq_botones_inicio"
+        android:background="@color/rojo"
+        android:textColor="@color/blanco"
+         />
+	<Button 
+        android:id="@+id/btn_ingnt_crearnotavoz"
+        android:layout_width="@dimen/width_botones_inicio"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_text_field_registro"
+        android:text="@string/btn_ingnt_CrarNota" 
+        android:layout_marginLeft="@dimen/margen_izq_botones_inicio"
+        android:background="@color/azul"
+        android:textColor="@color/blanco"
+         />
+
+</LinearLayout>

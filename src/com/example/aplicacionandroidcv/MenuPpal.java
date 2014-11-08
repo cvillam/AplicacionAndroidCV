@@ -79,7 +79,14 @@ public class MenuPpal extends ActionBarActivity {
 				
 			}
 		});
-		
+		newnotav.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				abrirNuevaNotaVoz(v);
+				
+			}
+		});
 	}
 	public void abrirEdicion(View v){
 		Intent edicion = new Intent(MenuPpal.this, EdicionCuenta.class);
@@ -95,6 +102,12 @@ public class MenuPpal extends ActionBarActivity {
 	}
 	public void abrirVerNotas(View v){
 		Intent nnt = new Intent(MenuPpal.this, VerNotas.class);
+		nnt.putExtra("login", name);
+		nnt.putExtra("loginu", loginu);
+       startActivity(nnt);
+	}
+	public void abrirNuevaNotaVoz(View v){
+		Intent nnt = new Intent(MenuPpal.this, IngNotaVoz.class);
 		nnt.putExtra("login", name);
 		nnt.putExtra("loginu", loginu);
        startActivity(nnt);

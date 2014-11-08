@@ -4,5 +4,132 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
+    <TextView 
+	    android:text="@string/txt_detnv_inicio"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    />
+	<TextView 
+	    android:text="@string/txt_detnt_Nombre"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:id="@+id/txt_detnv_nombre"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:text="@string/txt_detnt_Tag"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:id="@+id/txt_detnv_tag"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<Button 
+	    android:id="@+id/btn_nv_reproducir"
+	    android:layout_width="@dimen/width_botones_inicio"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:text="@string/btn_nv_reproducir"
+	    android:background="@color/verde"
+	    android:textColor="@color/blanco"
+	    android:layout_marginLeft="8dp"
+	    />
+	<Button 
+	    android:id="@+id/btn_nv_pararReprod"
+	    android:layout_width="@dimen/width_botones_inicio"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:text="@string/btn_nv_parar"
+	    android:background="@color/rojo"
+	    android:textColor="@color/blanco"
+	    android:layout_marginLeft="8dp"
+	    />
+	
+	
+	<TextView 
+	    android:text="@string/txt_detnt_HoraFecha"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:id="@+id/txt_detnv_horafecha"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:text="@string/txt_detnt_Ubicacion"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:text="@string/txt_detnt_Latitud"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:id="@+id/txt_detnv_latitud"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:text="@string/txt_detnt_Longitud"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<TextView 
+	    android:id="@+id/txt_detnv_longitud"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    
+	    />
+	<RelativeLayout 
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" >
+	    
+	    <Button 
+	    android:id="@+id/btn_nv_vermapa"
+	    android:layout_width="@dimen/width_botones_inicio"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:text="@string/btn_mapa"
+	    android:background="@color/azul"
+	    android:textColor="@color/blanco"
+	    android:layout_marginLeft="8dp"
+	    />
+	<Button 
+	    android:id="@+id/btn_nv_eliminarnota"
+	    android:layout_width="@dimen/width_botones_inicio"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:text="@string/btn_borrarnota"
+	    android:background="@color/rojo"
+	    android:textColor="@color/blanco"
+	    android:layout_toRightOf="@id/btn_nv_vermapa"
+	    android:layout_marginLeft="8dp"
+	    
+	    />
+	
+	</RelativeLayout>
+	
+    <WebView
+        android:id="@+id/webvmapNotaVoz"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

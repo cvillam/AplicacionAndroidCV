@@ -67,4 +67,11 @@
  	    <item>Varios</item>
  	</string-array>
  	<string name="btn_cerrarsesion">Cerrar sesión</string>
+ 	<string name="txt_ingresar_notavoz">Datos de la nota de voz</string>
+ 	<string name="btn_startRecord">Iniciar grabación</string>
+ 	<string name="btn_stoprecord">Parar grabación</string>
+ 	<string name="txt_detnv_inicio">Detalles de la nota seleccionada </string>
+ 	<string name="btn_nv_reproducir">Play</string>
+ 	<string name="btn_nv_parar">Stop</string>
+ 	
 </resources>
