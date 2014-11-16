@@ -32,7 +32,7 @@ public class MenuPpal extends ActionBarActivity {
 		close = (Button) findViewById(R.id.btn_close);
 	
 		String horafecha = DateFormat.getDateTimeInstance().format(new Date());
-		txt.setText(horafecha);
+		//txt.setText(horafecha);
 		Bundle bundle = getIntent().getExtras();
 		if(bundle != null) {
 			name = bundle.getString("login");

@@ -5,6 +5,8 @@ import java.io.IOException;
 
 import com.example.db.Nota;
 import com.example.db.NotaDAO;
+import com.example.networking.HttpAsyncTask;
+import com.example.networking.HttpAsyncTask.HttpAsyncInterface;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -20,7 +22,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class NotaVoz extends ActionBarActivity implements OnClickListener{
+public class NotaVoz extends ActionBarActivity implements OnClickListener, HttpAsyncInterface{
 	
 	String name, loginu, nombrenota, latitudenviar, longitudenviar;
 	TextView nombre, tag, horayfecha, lat, longitud;
@@ -123,6 +125,8 @@ public class NotaVoz extends ActionBarActivity implements OnClickListener{
 		                		notaborrar.setNombre(nombrenota);
 		                		notaborrar.setCreador(loginu);
 		                		dao.deleteNota(notaborrar);
+		                		//web
+		                		sinchttp(nombrenota, loginu);
 		                		 
 		                		File file = new File(path);
 		                		boolean deleted = file.delete();
@@ -179,4 +183,12 @@ public class NotaVoz extends ActionBarActivity implements OnClickListener{
 				e.printStackTrace();
 			}
 	   }
+public void setResponse(String rta) {
+		
+	}
+	public void sinchttp(String nnota, String loginu2) {
+		HttpAsyncTask task= new HttpAsyncTask(this
+				,"accion=eliminar&nombre="+nnota+"&creador="+loginu2);
+		task.execute("http://192.168.10.102:8080/NotappBackEnd/NotaServlet");
+	}
 }

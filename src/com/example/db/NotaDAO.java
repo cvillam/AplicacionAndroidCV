@@ -175,5 +175,18 @@ public class NotaDAO {
 		//db.delete(Planeta.TABLE_NAME, "_id=1, null) cuANDO SE COLOCAN LOS PARAMETROS EN LA SENTENCIA
 		db.delete(Nota.TABLE_NAME, "nombre = ? AND creador = ?", args);
 	}
+	public boolean nombreNotaYaExiste(String nombrenota, String creador){
+		
+		Cursor cursor = db.rawQuery("SELECT nombre FROM "+Nota.TABLE_NAME+
+				" WHERE ("+Nota.COLUMN_NOMBRE+" = '"+nombrenota+"' and creador ='"+creador+"')", null);
+		if(cursor!=null && cursor.getCount()>0){
+					return true;
+							
+			}
+		else {
+				return false;
+			}
+					
+	}
 	
 }

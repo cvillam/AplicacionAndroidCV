@@ -5,6 +5,8 @@ import java.util.Date;
 
 import com.example.db.Nota;
 import com.example.db.NotaDAO;
+import com.example.networking.HttpAsyncTask;
+import com.example.networking.HttpAsyncTask.HttpAsyncInterface;
 
 import android.content.Context;
 import android.content.Intent;
@@ -23,7 +25,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class IngNotaTexto extends ActionBarActivity implements OnClickListener, OnItemSelectedListener{
+public class IngNotaTexto extends ActionBarActivity implements OnClickListener, OnItemSelectedListener, HttpAsyncInterface{
 
 		//EditText tag;
 		EditText nombre, content;
@@ -61,37 +63,66 @@ public class IngNotaTexto extends ActionBarActivity implements OnClickListener, 
 
 		@Override
 		public void onClick(View v) {
-			float lat, lng;
-			Nota nota = new Nota();
-			nota.setNombre(nombre.getText().toString());
-			//nota.setTag(tag.getText().toString());
-			nota.setTag(tagenviar);
-			nota.setContenido(content.getText().toString());
-			locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		    Criteria criteria = new Criteria();
-		    provider = locationManager.getBestProvider(criteria, false);
-		    Location location = locationManager.getLastKnownLocation(provider);
-	    
-		    if (location != null) {
-		    	lat = (float) (location.getLatitude());
-			    lng = (float) (location.getLongitude());
-			    nota.setLatitud(lat);
-			    nota.setLongitud(lng);
-		      
-		    } else {
-		    	nota.setLatitud(0);
-			    nota.setLongitud(0);
-		    }
-		    nota.setCreador(loginu);
-		    String horafecha = DateFormat.getDateTimeInstance().format(new Date());
-		    nota.setHorafecha(horafecha);
-		    NotaDAO dao = new NotaDAO(this);
-		    dao.insertNotaTexto(nota);
-		    Toast.makeText(this, "Se ha creado la nota!", Toast.LENGTH_LONG).show();
-		    Intent intent = new Intent(IngNotaTexto.this, MenuPpal.class);
-			intent.putExtra("login", name);
-			intent.putExtra("loginu", loginu);
-			startActivity(intent);
+			NotaDAO dao = new NotaDAO(this);
+			if((nombre.getText().toString().length()*content.getText().length())==0){
+				Toast.makeText(this, "Debe llenar todos los campos!", Toast.LENGTH_LONG).show();
+			}
+			else{
+				 if(dao.nombreNotaYaExiste(nombre.getText().toString(), loginu)==false){
+						float lat, lng;
+						Nota nota = new Nota();
+						nota.setNombre(nombre.getText().toString());
+						//nota.setTag(tag.getText().toString());
+						nota.setTag(tagenviar);
+						nota.setContenido(content.getText().toString());
+						locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+					    Criteria criteria = new Criteria();
+					    provider = locationManager.getBestProvider(criteria, false);
+					    Location location = locationManager.getLastKnownLocation(provider);
+				    
+					    if (location != null) {
+					    	lat = (float) (location.getLatitude());
+						    lng = (float) (location.getLongitude());
+						    nota.setLatitud(lat);
+						    nota.setLongitud(lng);
+					      
+					    } else {
+					    	lat = 0;
+						    lng = 0;
+					    	nota.setLatitud(0);
+						    nota.setLongitud(0);
+					    }
+					    nota.setCreador(loginu);
+					    String horafecha = DateFormat.getDateTimeInstance().format(new Date());
+					    nota.setHorafecha(horafecha);
+					    
+					    dao.insertNotaTexto(nota);
+					    //parte web
+					    HttpAsyncTask task= new HttpAsyncTask(this
+								,"accion=ingresar&nombre="+nombre.getText().toString()+
+								"&tag="+tagenviar+
+								"&tipo=texto"+
+								"&contenido="+content.getText().toString()+
+								"&archivosound=noaplica"+
+								"&horafecha="+horafecha+
+								"&latitud="+lat+
+								"&longitud="+lng+
+								"&creador="+loginu			
+													
+					    		);
+						task.execute("http://192.168.10.102:8080/NotappBackEnd/NotaServlet");
+						
+					    Toast.makeText(this, "Se ha creado la nota!", Toast.LENGTH_LONG).show();
+					    Intent intent = new Intent(IngNotaTexto.this, MenuPpal.class);
+						intent.putExtra("login", name);
+						intent.putExtra("loginu", loginu);
+						startActivity(intent);
+					}else{
+						Toast.makeText(this, "Ya existe una nota con el nombre dado, por favor cambielo!", Toast.LENGTH_LONG).show();
+					}
+			}
+			
+			
 		}
 
 		
@@ -107,6 +138,9 @@ public class IngNotaTexto extends ActionBarActivity implements OnClickListener, 
 		@Override
 		public void onNothingSelected(AdapterView<?> parent) {
 			// TODO Auto-generated method stub
+			
+		}
+		public void setResponse(String rta) {
 			
 		}
 		

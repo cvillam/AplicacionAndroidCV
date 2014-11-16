@@ -11,8 +11,10 @@ import android.widget.Toast;
 
 import com.example.db.Usuario;
 import com.example.db.UsuarioDAO;
+import com.example.networking.HttpAsyncTask;
+import com.example.networking.HttpAsyncTask.HttpAsyncInterface;
 
-public class EdicionCuenta extends ActionBarActivity implements OnClickListener{
+public class EdicionCuenta extends ActionBarActivity implements OnClickListener, HttpAsyncInterface{
 	
 	EditText edname, edusername, edpass1, edpass2;
 	Button btnEdit;
@@ -51,25 +53,44 @@ public class EdicionCuenta extends ActionBarActivity implements OnClickListener{
 	}
 	@Override
 	public void onClick(View v) {
-		String n, user, p1, p2;
-		p1 = edpass1.getText().toString();
-		p2 = edpass2.getText().toString();
-		String n1=edname.getText().toString();
-		String u1 = edusername.getText().toString();
-		if(p1.equals(p2)){
-			Usuario usuario = new Usuario();
-			usuario.setNombre(edname.getText().toString());
-			usuario.setUsername(edusername.getText().toString());
-			usuario.setPassword(edpass1.getText().toString());
-			dao.updateUsuario(n1,u1,p1,name,loginu);
-			Toast.makeText(this, "Usuario editado!", Toast.LENGTH_LONG).show();
-			Intent intent = new Intent(EdicionCuenta.this, MenuPpal.class);
-			intent.putExtra("login", usuario.getNombre());
-            startActivity(intent);
+		if((edname.getText().toString().length()*edusername.getText().toString().length()*edpass1.getText().toString().length()*edpass2.getText().toString().length())==0){
+			Toast.makeText(this, "Debe llenar todos los campos!", Toast.LENGTH_LONG).show();
+		}else{
+			String n, user, p1, p2;
+			p1 = edpass1.getText().toString();
+			p2 = edpass2.getText().toString();
+			String n1=edname.getText().toString();
+			String u1 = edusername.getText().toString();
+			if(p1.equals(p2)){
+				Usuario usuario = new Usuario();
+				usuario.setNombre(edname.getText().toString());
+				usuario.setUsername(edusername.getText().toString());
+				usuario.setPassword(edpass1.getText().toString());
+				dao.updateUsuario(n1,u1,p1,name,loginu);
+				dao.updateCreadorNotas(edusername.getText().toString(), loginu);
+				//parte web
+				HttpAsyncTask task= new HttpAsyncTask(this
+						,"accion=editar&name="+edname.getText().toString().toString()+"&username="+edusername.getText().toString()+"&password="+edpass1.getText().toString()+"&busqueda="+loginu);
+				task.execute("http://192.168.10.102:8080/NotappBackEnd/UsuarioServlet");
+				
+				HttpAsyncTask task2= new HttpAsyncTask(this
+						,"accion=editar&nuevo="+edusername.getText().toString()+"&antiguo="+loginu);
+				task2.execute("http://192.168.10.102:8080/NotappBackEnd/NotaServlet");
+				
+				Toast.makeText(this, "Usuario editado!", Toast.LENGTH_LONG).show();
+				Intent intent = new Intent(EdicionCuenta.this, MenuPpal.class);
+				intent.putExtra("login", usuario.getNombre());
+				intent.putExtra("loginu", edusername.getText().toString());
+	            startActivity(intent);
+			}
+			else{
+				Toast.makeText(this, "Las contraseñas no coinciden!", Toast.LENGTH_LONG).show();
+			}
 		}
-		else{
-			Toast.makeText(this, "Las contraseñas no coinciden!", Toast.LENGTH_LONG).show();
-		}
+		
+		
+	}
+	public void setResponse(String rta) {
 		
 	}
 }

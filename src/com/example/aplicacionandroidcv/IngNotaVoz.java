@@ -6,6 +6,8 @@ import java.util.Date;
 
 import com.example.db.Nota;
 import com.example.db.NotaDAO;
+import com.example.networking.HttpAsyncTask;
+import com.example.networking.HttpAsyncTask.HttpAsyncInterface;
 
 import android.content.Context;
 import android.content.Intent;
@@ -25,7 +27,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListener{
+public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListener, HttpAsyncInterface{
 	
 	EditText nombre;
 	Spinner tag;
@@ -101,6 +103,11 @@ public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListe
 			Toast.makeText(this, "Primero debe ingresar el nombre de la nota!", Toast.LENGTH_LONG).show();
 		}
 		else{
+			NotaDAO daoprueba = new NotaDAO(this);
+			if(daoprueba.nombreNotaYaExiste(nombre.getText().toString(), loginu)==true){
+				Toast.makeText(this, "El nombre de la nota ya existe, debe cambiarlo!", Toast.LENGTH_LONG).show();
+			}
+			else{
 			pathcompleto = pathcompleto+nombre.getText().toString()+".3gpp";
 			outputFile = outputFile+nombre.getText().toString()+".3gpp";
 			myRecorder.setOutputFile(pathcompleto);
@@ -118,7 +125,7 @@ public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListe
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-	          
+			}
 		}
 	}
 	public void pararGrabacion(View v){
@@ -148,6 +155,8 @@ public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListe
 		    nota.setLongitud(lng);
 	      
 	    } else {
+	    	lat = 0;
+		    lng = 0;
 	    	nota.setLatitud(0);
 		    nota.setLongitud(0);
 	    }
@@ -157,6 +166,21 @@ public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListe
 	    nota.setArchivosound(outputFile);
 	    NotaDAO dao = new NotaDAO(this);
 	    dao.insertNotaVoz(nota);
+	    //parte web
+	    HttpAsyncTask task= new HttpAsyncTask(this
+				,"accion=ingresar&nombre="+nombre.getText().toString()+
+				"&tag="+tagenviar+
+				"&tipo=voz"+
+				"&contenido=noaplica"+
+				"&archivosound="+outputFile+
+				"&horafecha="+horafecha+
+				"&latitud="+lat+
+				"&longitud="+lng+
+				"&creador="+loginu			
+									
+	    		);
+		task.execute("http://192.168.10.102:8080/NotappBackEnd/NotaServlet");
+	    
 	    Toast.makeText(this, "Se ha creado la nota!", Toast.LENGTH_LONG).show();
 	    Intent intent = new Intent(IngNotaVoz.this, MenuPpal.class);
 		intent.putExtra("login", name);
@@ -173,6 +197,9 @@ public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListe
 	@Override
 	public void onNothingSelected(AdapterView<?> parent) {
 		// TODO Auto-generated method stub
+		
+	}
+	public void setResponse(String rta) {
 		
 	}
 }

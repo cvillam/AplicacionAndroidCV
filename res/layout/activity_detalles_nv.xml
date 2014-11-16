@@ -9,11 +9,13 @@
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_gravity="center"
+	    android:textColor="@color/azul"
 	    />
 	<TextView 
 	    android:text="@string/txt_detnt_Nombre"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
+	    android:textColor="@color/violeta"
 	    
 	    />
 	<TextView 
@@ -26,6 +28,7 @@
 	    android:text="@string/txt_detnt_Tag"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
+	    android:textColor="@color/violeta"
 	    
 	    />
 	<TextView 
@@ -60,6 +63,7 @@
 	    android:text="@string/txt_detnt_HoraFecha"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
+	    android:textColor="@color/violeta"
 	    
 	    />
 	<TextView 
@@ -72,12 +76,14 @@
 	    android:text="@string/txt_detnt_Ubicacion"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
+	    android:textColor="@color/violeta"
 	    
 	    />
 	<TextView 
 	    android:text="@string/txt_detnt_Latitud"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
+	    android:textColor="@color/violeta"
 	    
 	    />
 	<TextView 
@@ -90,6 +96,7 @@
 	    android:text="@string/txt_detnt_Longitud"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
+	    android:textColor="@color/violeta"
 	    
 	    />
 	<TextView 

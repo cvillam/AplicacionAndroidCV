@@ -6,7 +6,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.aplicacionandroidcv.InicioSesion" >
+    tools:context="com.example.aplicacionandroidcv.InicioSesion" 
+    android:background="@color/blanco"
+    >
 
     <TextView
         android:id="@+id/mensaje_bienvenida"
@@ -14,14 +16,23 @@
         android:layout_height="wrap_content"
         android:text="@string/mensajeinisesion" 
         android:gravity="center"
+        android:textColor="@color/azul"
         
+        />
+    <ImageView 
+        android:id="@+id/imageninicio"
+        android:src="@drawable/imgnota"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/mensaje_bienvenida"
+        android:layout_centerInParent="true"
         />
     <TextView
         android:id="@+id/mensaje_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/iniciousuario" 
-        android:layout_below="@id/mensaje_bienvenida"
+        android:layout_below="@id/imageninicio"
         android:layout_marginTop="@dimen/margen_arriba_actInicio"
         />
     <EditText 
@@ -30,7 +41,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/hint_inicio_usuario"
         android:layout_toRightOf="@id/mensaje_usuario"
-        android:layout_below="@id/mensaje_bienvenida"
+        android:layout_below="@id/imageninicio"
         android:layout_marginTop="@dimen/margen_text_field_inicio"
         android:inputType="text"
         />
