@@ -79,7 +79,7 @@
         android:id="@+id/btn_registro"
         android:layout_width="@dimen/width_botones_inicio"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margen_arriba_actInicio"
+        android:layout_marginTop="7dp"
         android:layout_below="@id/btn_inicio_sesion"
         android:text="@string/button_registro" 
         android:layout_marginLeft="@dimen/margen_izq_botones_inicio"

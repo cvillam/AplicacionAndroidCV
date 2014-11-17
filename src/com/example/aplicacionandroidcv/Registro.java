@@ -57,11 +57,12 @@ public class Registro extends ActionBarActivity implements OnClickListener, Http
 					//borrar
 					HttpAsyncTask task= new HttpAsyncTask(this
 							,"accion=registrar&name="+name.getText().toString()+"&username="+username.getText().toString()+"&password="+pass.getText().toString());
-					task.execute("http://192.168.10.102:8080/NotappBackEnd/UsuarioServlet");
+					task.execute("http://192.168.10.100:8080/NotappBackEnd/UsuarioServlet");
 					
 					Toast.makeText(this, "Usuario creado! Ya puedes inciar sesión!", Toast.LENGTH_LONG).show();
 					Intent intent = new Intent(Registro.this, InicioSesion.class);
 		            startActivity(intent);
+		            
 				}
 				else{
 					Toast.makeText(this, "Las contraseñas no coinciden!", Toast.LENGTH_LONG).show();
