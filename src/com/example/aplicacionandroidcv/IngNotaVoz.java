@@ -1,5 +1,6 @@
 package com.example.aplicacionandroidcv;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
@@ -62,10 +63,15 @@ public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListe
 								
 		}
 		
-		outputFile = "/sonidos/";
-		pathcompleto = Environment.getExternalStorageDirectory().
-	    		  getAbsolutePath() + "/sonidos/";
-
+		outputFile = "/sonidos/"+loginu+"/";
+		
+		File folder = new File(Environment.getExternalStorageDirectory() + "/sonidos/"+loginu);
+	    if (!folder.exists()) {
+	        
+	        folder.mkdir();
+	    }
+	    pathcompleto = Environment.getExternalStorageDirectory().
+	    		  getAbsolutePath() + "/sonidos/"+loginu+"/";
 	      myRecorder = new MediaRecorder();
 	      myRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
 	      myRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
@@ -118,8 +124,8 @@ public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListe
 				return false;
 			}
 			else{
-			pathcompleto = pathcompleto+nombre.getText().toString()+".3gpp";
-			outputFile = outputFile+nombre.getText().toString()+".3gpp";
+			pathcompleto = pathcompleto+loginu+nombre.getText().toString()+".3gpp";
+			outputFile = outputFile+loginu+nombre.getText().toString()+".3gpp";
 			myRecorder.setOutputFile(pathcompleto);
 			 try {
 				myRecorder.prepare();
