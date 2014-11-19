@@ -20,6 +20,7 @@ public class EdicionCuenta extends ActionBarActivity implements OnClickListener,
 	Button btnEdit;
 	String name, loginu;
 	UsuarioDAO dao;
+	public static final String DIR_IP ="192.168.10.102";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -92,11 +93,11 @@ public class EdicionCuenta extends ActionBarActivity implements OnClickListener,
 			//parte web
 			HttpAsyncTask task= new HttpAsyncTask(this
 					,"accion=editar&name="+edname.getText().toString().toString()+"&username="+edusername.getText().toString()+"&password="+edpass1.getText().toString()+"&busqueda="+loginu);
-			task.execute("http://192.168.10.100:8080/NotappBackEnd/UsuarioServlet");
+			task.execute("http://"+DIR_IP+":8080/NotappBackEnd/UsuarioServlet");
 			
 			HttpAsyncTask task2= new HttpAsyncTask(this
 					,"accion=editar&nuevo="+edusername.getText().toString()+"&antiguo="+loginu);
-			task2.execute("http://192.168.10.100:8080/NotappBackEnd/NotaServlet");
+			task2.execute("http://"+DIR_IP+":8080/NotappBackEnd/NotaServlet");
 			
 			Toast.makeText(this, "Usuario editado!", Toast.LENGTH_LONG).show();
 			Intent intent = new Intent(EdicionCuenta.this, MenuPpal.class);

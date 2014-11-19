@@ -20,6 +20,7 @@ public class Registro extends ActionBarActivity implements OnClickListener, Http
 	
 	EditText name, username, pass, pass2;
 	Button registro;
+	public static final String DIR_IP ="192.168.10.102";
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +58,7 @@ public class Registro extends ActionBarActivity implements OnClickListener, Http
 					//borrar
 					HttpAsyncTask task= new HttpAsyncTask(this
 							,"accion=registrar&name="+name.getText().toString()+"&username="+username.getText().toString()+"&password="+pass.getText().toString());
-					task.execute("http://192.168.10.100:8080/NotappBackEnd/UsuarioServlet");
+					task.execute("http://"+DIR_IP+":8080/NotappBackEnd/UsuarioServlet");
 					
 					Toast.makeText(this, "Usuario creado! Ya puedes inciar sesión!", Toast.LENGTH_LONG).show();
 					Intent intent = new Intent(Registro.this, InicioSesion.class);

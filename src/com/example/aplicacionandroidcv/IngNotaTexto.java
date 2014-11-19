@@ -35,6 +35,7 @@ public class IngNotaTexto extends ActionBarActivity implements OnClickListener, 
 		String provider;
 		String name, loginu;
 		String tagenviar;
+		public static final String DIR_IP ="192.168.10.102";
 		
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
@@ -110,7 +111,7 @@ public class IngNotaTexto extends ActionBarActivity implements OnClickListener, 
 								"&creador="+loginu			
 													
 					    		);
-						task.execute("http://192.168.10.102:8080/NotappBackEnd/NotaServlet");
+						task.execute("http://"+DIR_IP+":8080/NotappBackEnd/NotaServlet");
 						
 					    Toast.makeText(this, "Se ha creado la nota!", Toast.LENGTH_LONG).show();
 					    Intent intent = new Intent(IngNotaTexto.this, MenuPpal.class);

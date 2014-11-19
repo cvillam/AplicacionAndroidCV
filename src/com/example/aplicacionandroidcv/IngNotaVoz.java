@@ -39,6 +39,7 @@ public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListe
 	LocationManager locationManager;
 	String provider;
 	String tagenviar;
+	public static final String DIR_IP ="192.168.10.102";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +76,14 @@ public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListe
 			
 			@Override
 			public void onClick(View v) {
-				iniciarGrabacion(v);
+				boolean b = iniciarGrabacion(v);
+				if(b==false){
+					Intent intent = new Intent(IngNotaVoz.this, IngNotaVoz.class);
+					intent.putExtra("login", name);
+					intent.putExtra("loginu", loginu);
+					startActivity(intent);
+				}
+				
 				
 			}
 		});
@@ -97,15 +105,17 @@ public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListe
 		});
 	      tag.setOnItemSelectedListener(this);
 	}
-	public void iniciarGrabacion(View v){
+	public boolean iniciarGrabacion(View v){
 		start.setEnabled(false);
 		if(nombre.getText().toString().isEmpty()){
 			Toast.makeText(this, "Primero debe ingresar el nombre de la nota!", Toast.LENGTH_LONG).show();
+			return false;
 		}
 		else{
 			NotaDAO daoprueba = new NotaDAO(this);
 			if(daoprueba.nombreNotaYaExiste(nombre.getText().toString(), loginu)==true){
 				Toast.makeText(this, "El nombre de la nota ya existe, debe cambiarlo!", Toast.LENGTH_LONG).show();
+				return false;
 			}
 			else{
 			pathcompleto = pathcompleto+nombre.getText().toString()+".3gpp";
@@ -116,6 +126,7 @@ public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListe
 				myRecorder.start();
 				Toast.makeText(this, "Ha iniciado la grabación", Toast.LENGTH_LONG).show();
 				stop.setEnabled(true);
+				return true;
 				
 				
 			} catch (IllegalStateException e) {
@@ -127,6 +138,7 @@ public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListe
 			}
 			}
 		}
+		return true;
 	}
 	public void pararGrabacion(View v){
 		 myRecorder.stop();
@@ -179,7 +191,7 @@ public class IngNotaVoz extends ActionBarActivity implements OnItemSelectedListe
 				"&creador="+loginu			
 									
 	    		);
-		task.execute("http://192.168.10.102:8080/NotappBackEnd/NotaServlet");
+		task.execute("http://"+DIR_IP+":8080/NotappBackEnd/NotaServlet");
 	    
 	    Toast.makeText(this, "Se ha creado la nota!", Toast.LENGTH_LONG).show();
 	    Intent intent = new Intent(IngNotaVoz.this, MenuPpal.class);
